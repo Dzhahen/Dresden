@@ -58,15 +58,23 @@
         .gallery {
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            gap: 40px
         }
 
-        .gallery img {
-            width: 300px;
+        .gallery-image {
+            max-width: 300px;
             height: auto;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
 
         .gallery-image:hover {
-            transform: scale(1.1);
+            transform: scale(1.3);
         }
     </style>
 </head>
@@ -112,12 +120,27 @@
         </span>
         <br>
         <div class="gallery">
-            <img src="https://images.tagesschau.de/image/fc0b550b-3630-4f61-8703-fa14b5234b23/AAABiGO0Y-s/AAABibBxqrQ/16x9-1280/mdr-frauenkirche-dresden-aussenansicht-100.jpg" alt="Frauenkirche">
-            <img src="https://dresden-culture.de/wp-content/uploads/2019/01/Dresden-Residenzschloss-und-Kathedrale.jpg" alt="Residenzschloss">
-            <img src="https://www.opernreisen-dresden.de/wp-content/uploads/2023/02/Semperoper-Dresden.jpeg" alt="Semperoper">
-            <img src="https://img.fotocommunity.com/elbpromenade-dresden-ecf8d1a9-68cc-4aee-a4fb-dc783895f750.jpg?height=1080" alt="Elbpromenade">
-            <img src="https://dresden-stadtfuehrer.de/img/Museum_AlteMeister/alteMeister_960x629.jpg" alt="Gemäldegalerie">
-          </div>
+            <img src="https://images.tagesschau.de/image/fc0b550b-3630-4f61-8703-fa14b5234b23/AAABiGO0Y-s/AAABibBxqrQ/16x9-1280/mdr-frauenkirche-dresden-aussenansicht-100.jpg" alt="Image 1"
+                class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+            <img src="https://dresden-culture.de/wp-content/uploads/2019/01/Dresden-Residenzschloss-und-Kathedrale.jpg" alt="Image 2"
+                class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+            <img src="https://www.opernreisen-dresden.de/wp-content/uploads/2023/02/Semperoper-Dresden.jpeg" alt="Image 3"
+                class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+            <img src="https://img.fotocommunity.com/elbpromenade-dresden-ecf8d1a9-68cc-4aee-a4fb-dc783895f750.jpg?height=1080" alt="Image 4"
+                class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+            <img src="https://dresden-stadtfuehrer.de/img/Museum_AlteMeister/alteMeister_960x629.jpg" alt="Image 5"
+                class="gallery-image" onmouseover="zoomIn(this)" onmouseout="zoomOut(this)">
+        </div>
+        
+        <script>
+            function zoomIn(element) {
+                element.style.transform = 'scale(1.3)';
+            }
+        
+            function zoomOut(element) {
+                element.style.transform = 'scale(1)';
+            }
+        </script>
         <br>
         <br>
         <br>
@@ -135,8 +158,9 @@
         <hr>
         <br>
         <center>
-            Autor: <a href="https://dzhahen.github.io/AboutMe/">Default</a><br><br>
-            Kontakt: <a href="mailto:justdefffault@gmail.com">justdefffault@gmail.com</a>
+            <p>Autor: <a href="https://dzhahen.github.io/AboutMe/">Default</a></p>
+            <p>Kontakt: <a href="mailto:justdefffault@gmail.com">justdefffault@gmail.com</a></p>
         </center>
     </section>
 </body>
+</html>
